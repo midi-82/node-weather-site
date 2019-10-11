@@ -16,8 +16,9 @@ const forecast = (latitude, longitude, callback) => {
            }  else {
            const temperature = body.currently.temperature;
            const rainProb = body.currently.precipProbability;
+           const summary = body.daily.summary;
 
-           const result = 'It is currently '+ temperature + ' degrees. There is a probability of ' + rainProb + ' % of rain.';
+           const result = 'Summary of weather conditions: ' + summary + ' It is currently '+ temperature + ' degrees. There is a probability of ' + rainProb + ' % of rain.';
            
            callback(undefined, result);
            }
@@ -27,3 +28,5 @@ const forecast = (latitude, longitude, callback) => {
 }
 
 module.exports = forecast;
+
+
